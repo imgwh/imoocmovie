@@ -20,7 +20,7 @@ exports.new = function(req, res) {
     title: 'imooc 后台录入页',
     movie: {
       title: '',
-      doctor: '',
+      director: '',
       country: '',
       year: '',
       poster: '',
