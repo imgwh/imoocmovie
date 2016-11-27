@@ -1,3 +1,4 @@
+//comment
 $(function () {
 	$('.comment').click(function(e){
 		var target = $(this)
