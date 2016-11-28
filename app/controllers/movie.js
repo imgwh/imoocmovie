@@ -1,5 +1,6 @@
 var Movie = require('../models/movie')
 var Comment = require('../models/comment')
+var Category = require('../models/category')
 var _ = require('underscore')
 
 
@@ -25,18 +26,12 @@ exports.detail = function(req, res) {
 
 // admin new page
 exports.new = function(req, res) {
-  res.render('admin', {
-    title: 'imooc 后台录入页',
-    movie: {
-      title: '',
-      director: '',
-      country: '',
-      year: '',
-      poster: '',
-      flash: '',
-      summary: '',
-      language: '',
-    }
+  Category.find({}, function(err, categories) {
+    res.render('admin', {
+      title: 'imooc 后台录入页',
+      categories: categories,
+      movie: {}
+    })
   })
 }
 
@@ -77,23 +72,22 @@ exports.save = function(req, res) {
     })
   }
   else {
-    _movie = new Movie({
-      director: movieObj.director,
-      title: movieObj.title,
-      language: movieObj.language,
-      country: movieObj.country,
-      year: movieObj.year,
-      poster: movieObj.poster,
-      summary: movieObj.summary,
-      flash: movieObj.flash
-    })
+    _movie = new Movie(movieObj)
+
+    var categoryId = _movie.category
 
     _movie.save(function(err, movie) {
       if (err) {
         console.log(err)
       }
 
-      res.redirect('/movie/' + movie._id)
+      Category.findById(categoryId, function(err, category) {
+        category.movies.push(movie._id)
+
+        category.save(function(err, category) {
+          res.redirect('/movie/' + movie._id)
+        })
+      })     
     })
   }
 }
