@@ -21,7 +21,7 @@ block content
 							if movie._id
 								input(type="radio", name="movie[category]", value=cat._id, checked=cat._id.toString()==movie.category.toString())
 							else
-								input(type="radio", name="movie[category]", value=cat._id, checked=cat._id)
+								input(type="radio", name="movie[category]", value=cat._id)
 							| #{cat.name}
 				.form-group
 					label.col-sm-2.control-label(for="inputTitle") 电影名字
