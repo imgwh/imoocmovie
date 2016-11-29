@@ -1,18 +1,16 @@
 {
   "name": "node_imooc",
-  "version": "0.0.1",
+  "description": "node + express website",
+  "main": "app.js",
   "authors": [
-    "cyper <345343747@qq.com>"
-  ],
-  "description": "imooc movie",
-  "moduleType": [
-    "node"
-  ],
-  "keywords": [
-    "imooc",
-    "movie"
+    "imgwho"
   ],
   "license": "MIT",
+  "keywords": [
+    "node",
+    "express"
+  ],
+  "homepage": "https://github.com/imgwh/imoocmovie",
   "ignore": [
     "**/.*",
     "node_modules",
@@ -22,6 +20,7 @@
     "tests"
   ],
   "dependencies": {
+    "jquery": "1.9.1 - 3",
     "bootstrap": "~3.3.5"
   }
 }
