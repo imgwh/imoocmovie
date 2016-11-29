@@ -7,8 +7,6 @@ Party from [uniquejava](https://github.com/uniquejava/node_imooc) Thank a lot!
 * express
 * jade
 * mongoose
-* moment
-* underscore
 * bower
 * jquery
 * bootstrap
@@ -24,11 +22,11 @@ Type `node app.js`
 
 |#| module|url|
 |---|---|---|
-|1|home|http://localhost:3000
-|2|add|http://localhost:3000/admin/movie
-|3|detail|http://localhost:3000/movie/:id
-|4|list|http://localhost:3000/admin/list
-|5|userlist|http://localhost:3000/admin/userlist
+|1|homepage|localhost:3000
+|2|movie admin|/admin/movie/new /admin/movie/update/:id /admin/movie/list
+|3|detail|localhost:3000/movie/:id
+|4|category admin|/admin/category/new /admin/category/list
+|5|results|/results
 
 ### Todo (example)
 ~~Fix warning~~ done(2016.2.26)
